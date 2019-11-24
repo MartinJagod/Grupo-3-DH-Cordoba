@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class=" mx-auto">  <img class="" alt="" src="/images/logo1.jpg" /></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -35,6 +35,7 @@
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
+
                                 @enderror
                             </div>
                         </div>
@@ -71,3 +72,40 @@
     </div>
 </div>
 @endsection
+{{-- <div class="container-fluid  col-md-12 banner principallogin ">
+  <div class="row col-md-12 banner ">
+
+    <div class=" container col-md-4 fondoGris">
+
+      <form role="form" action= "validar.php" method='post' >
+        <div class="form-group">
+          <label for="exampleInputEmail1">
+            Direccion de Email
+          </label>
+          <input type="email" class="form-control" name="email" id="email">
+        </div>
+
+        <div class="form-group">
+
+          <label for="exampleInputPassword1">
+            Password
+          </label>
+          <input type="password" class="form-control" name="password" id="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <div class="container shadow p-3 mb-5 bg-white rouded col-md-4 ">
+      <address>
+        <img class="col-12 banner " alt="Bootstrap Image" src="img/logo1.jpg" />
+        <br>
+         <strong>Coordobeses, Inc.</strong><br /> Jose Baigorri 653.<br /> Cordoba, X5001AJM<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
+      </address>
+    </div>
+  </div>
+
+</div> --}}
