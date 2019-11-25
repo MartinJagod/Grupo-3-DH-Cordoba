@@ -81,7 +81,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Coordobes
+                  <div class=" mx-auto">  <img class="" alt="" src="/images/logo1.jpg" /></div>
+
                 </div>
 
                 <div class="links">
