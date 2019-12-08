@@ -34,7 +34,7 @@
 
                     						<li class="list-item">
                                   <a class="btn btn-link" href="#">
-                                  <h5><i class="fas fa-home"></i> Inicio</h5>
+                                  <h5><i class="fas fa-home"></i> Fotos</h5>
                                   </a>
                     						</li>
 
@@ -84,7 +84,7 @@
                     				<div class="col-md-6 border">
 
                     					<h2 class="border-bottom">
-                          {{ Auth::user()->name }} <span class="caret"></span>
+                          {{ strtoupper(Auth::user()->name) }} <span class="caret"></span>
 
                     					</h2>
 
@@ -102,7 +102,7 @@
                               				<div class="col-md-9">
 
                                         <form class="form-inline">
-                                          <input class="form-control mr-sm-2" type="search" placeholder="Que estas haciendo?" aria-label="Search">
+                                          <input class="form-control mr-sm-4" type="search" placeholder="Que estas haciendo?" aria-label="Search">
                                           <button class="btn btn-primary btn-lg my-2 my-sm-0" type="submit">Publicar</button>
                                         </form>
 
