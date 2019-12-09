@@ -81,7 +81,7 @@
                     <!-- ESTO ES CANVAS CENTRAL -->
 
 
-                    				<div class="col-md-6 border">
+                    				<div class="col-md-7 border">
 
                     					<h2 class="border-bottom">
                           {{ strtoupper(Auth::user()->name) }} <span class="caret"></span>
@@ -155,14 +155,14 @@
 
 
                     <!-- ESTO ES CANVAS DERECHO -->
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                     <!-- buscador -->
 
                     <nav class="navbar navbar-light bg-white">
                       <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                        <button class="btn btn-primary btn-sm my-2 my-sm-0" type="submit">Buscar</button>
+                        <input class="form-control mr-sm-2" id="buscador" type="search" placeholder="????" aria-label="Search">
+                        <button class="btn btn-primary btn-sm my-2 my-sm-0 botonBuscar" type="submit">Buscar</button>
                       </form>
                     </nav>
 
@@ -210,7 +210,7 @@
 
                     					</ul>
                     					<h3>
-                    						A quien seguir
+                    						Otros en tu zona:
                     					</h3>
                     					<ul class="list-unstyled">
                                 <a class="btn btn-link" href="#">
