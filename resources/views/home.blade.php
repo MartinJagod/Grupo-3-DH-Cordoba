@@ -29,27 +29,27 @@
                     				<div class="col-md-3">
                               <img class=" img-fluid" alt="Resposive image" src="/images/logo1.jpg" />
 
-                    					<ul class="list-unstyled">
+								<ul class="list-unstyled">
 
 
                     						<li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                                  <h5><i class="fas fa-home"></i> Fotos</h5>
-                                  </a>
+												<a class="btn btn-link" href="#">
+												<h5><i class="fas fa-home"></i> Fotos</h5>
+												</a>
                     						</li>
 
                                 <li class="list-item">
                                   <a class="btn btn-link" href="#">
                                   <h5><i class="fas fa-bell"></i>  Notificaciones</h5>
                                   </a>
-                    						</li>
+								</li>
 
 
                                 <li class="list-item">
                                   <a class="btn btn-link" id="mensajes" href="#">
                                   <h5><i class="fas fa-envelope"></i>  Mensajes</h5>
                                   </a>
-                    						</li>
+								</li>
 
                                 <li class="list-item">
                                   <a class="btn btn-link" href="#">
@@ -61,7 +61,7 @@
                                   <a class="btn btn-link" id="perfil" href="#">
                                   <h5><i class="fas fa-user-circle"></i>Perfil</h5>
                                   </a>
-                    						</li>
+								</li>
 
                                 <li class="list-item">
                                   <a class="btn btn-link" href="#">
@@ -72,85 +72,21 @@
 
 
 
-                    					<button type="button" class="btn btn-primary btn-sm">Chamullar</button>
+								<button type="button" class="btn btn-primary btn-sm">Chamullar</button>
 
-                    					</button>
+								</button>
 
                     				</div>
 
-                    <!-- ESTO ES CANVAS CENTRAL -->
-
-
-                    				<div class="col-md-7 border">
-
-                    					<h2 class="border-bottom">
-                          {{ strtoupper(Auth::user()->name) }} <span class="caret"></span>
-
-                    					</h2>
-
-
-                              <!-- que estas haciendo -->
-
-                    			<div class="container border-bottom fondoGris">
-
-                              	<div class="row">
-                              		<div class="col-md-12">
-                              			<div class="row">
-                              				<div class="col-md-3">
-                              			 <i class="fas fa-user fa-6x"></i>
-                              				</div>
-                              				<div class="col-md-9">
-
-                                        <form class="form-inline">
-                                          <input class="form-control mr-sm-4" type="search" placeholder="Que estas haciendo?" aria-label="Search">
-                                          <button class="btn btn-primary btn-lg my-2 my-sm-0" type="submit">Publicar</button>
-                                        </form>
-
-
-
-                              					<div class="row">
-                              						<div class="col-md-6">
-                              							<div class="row">
-                              								<div class="col-md-4">
-
-                              									<button type="button" class="btn btn-primary btn-sm">
-                              										<i class="far fa-image fa-2x"></i>
-                              									</button>
-                              								</div>
-                              								<div class="col-md-4 ">
-
-                                                					<button type="button" class="btn btn-primary btn-sm">
-                              										<i class="far fa-smile fa-2x"></i>
-                              									</button>
-                              								</div>
-                              								<div class="col-md-4">
-
-                    												<button type="button" class="btn btn-primary btn-sm">
-                              										<i class="fas fa-question fa-2x"></i>
-                              									</button>
-                              								</div>
-                              							</div>
-                              						</div>
-
-                              					</div>
-
-                              				</div>
-
-                              			</div>
-                              		</div>
-                              	</div>
-                              </div>
-
-
-                    	      <div class="container fondoDiv" id="centrali">
-
-                    			 <!-- <h3>Aqui va Todo</h3>		   -->
-                    		  </div>
-
-
-
-                    <!-- se cierra canvas central -->
-                    		</div>
+                   <!-- aqui va el post -->
+				    
+					     <posts></posts>
+					  
+					  
+					   
+				
+				        
+                    		
 
 
 
@@ -280,5 +216,8 @@
             </div>
         </div>
     </div>
+</div>
+
+	
 </div>
 @endsection
