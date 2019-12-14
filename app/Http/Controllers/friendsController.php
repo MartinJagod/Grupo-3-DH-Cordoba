@@ -8,9 +8,15 @@ class friendsController extends Controller
 {
     public function find(){
 
-      $friend=User::where("name","=", $_GET['buscador'])->get();
+      $friend=User::where("name","LIKE", "%{$_GET['buscador']}%")
+      ->orwhere('surname',"LIKE", "%{$_GET['buscador']}%")
+      ->get();
       $vac=compact("friend");
       return view ('friendship',$vac);
     }
 
+    public function requestFriend($id){
+
+      
+    }
 }

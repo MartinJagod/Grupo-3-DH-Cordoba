@@ -2,10 +2,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div> <ul>
+<div class='container'> <ul>
   @forelse($friend as $frien)
     <li>
-      {{$frien->surname}} {{$frien->name}}
+      <a class="btn btn-primary" action='route(friendsController@requestFriend,{{ucfirst($frien->id)}})' role="button">{{ucfirst($frien->surname)}} {{ucfirst($frien->name)}}</a>
+      {{--<button type="button" class="btn btn-primary btn-sm">Agregar a amigos</button>--}}
+      <br><br>
     </li>
   @empty
     <p>
