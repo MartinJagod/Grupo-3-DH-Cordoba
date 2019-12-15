@@ -1,4 +1,4 @@
-<template>
+
       <!-- ESTO ES CANVAS CENTRAL -->
 
 

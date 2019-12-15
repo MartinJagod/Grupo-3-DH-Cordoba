@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class=" mx-auto">  <img class="" alt="" src="/images/logo1.jpg" /></div>
-
+                <div class=" mx-auto">  <img class="" alt=""  src="/images/tglobo.png" style="display:block; margin-left: auto; margin-right: auto; width:40%; margin-bottom: 20px; margin-top: 20px;" /></div>
+  <div class=" mx-auto">  <img class="" alt=""  src="/images/cordoo.png" style="display:block; margin-left: auto; margin-right: auto; width:40%; margin-bottom: 50px; " /></div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
