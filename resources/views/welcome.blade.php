@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Coordobes</title>
+        <title>Cordoobeses</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  <div class=" mx-auto">  <img class="" alt="" src="/images/logo1.jpg" /></div>
+                  <div class=" mx-auto">  <img class="" alt=""  src="/images/cordoo.png" style="display:block; margin-left: auto; margin-right: auto; width:90%; margin-bottom: 50px; margin-top: 20px;"/></div>
 
                 </div>
 

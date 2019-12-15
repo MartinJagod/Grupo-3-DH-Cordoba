@@ -19,91 +19,87 @@
 
                     <div class="container espaciado">
                     	<div class="row">
-                    		<div class="col-md-12">
+                        <div class="col-md-12">
 
 
-                    <!-- ESTO ES CANVAS IZQUIERDO -->
+        <!-- ESTO ES CANVAS IZQUIERDO -->
+
+                <div class="row">
+                    				<div class="col-md-3" style="min-height: 80vh;">
+                              <img class="img-fluid" alt="Responsive image" src="/images/cordoo.png" style="display:block; margin-left: auto; margin-right: auto; width:90%; margin-bottom: 50px; margin-top: 20px;" />
+
+{{-- LISTADO CON OPCIONES MENU IZQUIERDO --}}
+              							<ul class="list-unstyled">
 
 
-                    			<div class="row">
-                    				<div class="col-md-3">
-                              <img class=" img-fluid" alt="Resposive image" src="/images/logo1.jpg" />
+                                						<li class="list-item">
+                          												<a class="btn btn-link" href="#">
+                          												<h5><i class="fas fa-home"></i> Fotos</h5>
+                          												</a>
+                                						</li>
 
-								<ul class="list-unstyled">
+                                            <li class="list-item">
+                                                  <a class="btn btn-link" href="#">
+                                                  <h5><i class="fas fa-bell"></i>  Notificaciones</h5>
+                                                  </a>
+            								               </li>
 
+                                            {{-- <li class="list-item">
+                                                <a class="btn btn-link" id="mensajes" href="#">
+                                                <h5><i class="fas fa-envelope"></i>  Mensajes</h5>
+                                                </a>
+            								               </li>
 
-                    						<li class="list-item">
-												<a class="btn btn-link" href="#">
-												<h5><i class="fas fa-home"></i> Fotos</h5>
-												</a>
-                    						</li>
+                                            <li class="list-item">
+                                                <a class="btn btn-link" href="#">
+                                                <h5><i class="fas fa-list-alt"></i> Listas</h5>
+                                                </a>
+                                            </li> --}}
 
-                                <li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                                  <h5><i class="fas fa-bell"></i>  Notificaciones</h5>
-                                  </a>
-								</li>
+                                            <li class="list-item">
+                                                <a class="btn btn-link" id="perfil" href="#">
+                                                <h5><i class="fas fa-user-circle"></i>Perfil</h5>
+                                                </a>
+            								                </li>
 
-
-                                <li class="list-item">
-                                  <a class="btn btn-link" id="mensajes" href="#">
-                                  <h5><i class="fas fa-envelope"></i>  Mensajes</h5>
-                                  </a>
-								</li>
-
-                                <li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                                  <h5><i class="fas fa-list-alt"></i> Listas</h5>
-                                  </a>
-                                </li>
-
-                                <li class="list-item">
-                                  <a class="btn btn-link" id="perfil" href="#">
-                                  <h5><i class="fas fa-user-circle"></i>Perfil</h5>
-                                  </a>
-								</li>
-
-                                <li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                                  <h5><i class="fas fa-ellipsis-h"></i> Opciones</h5>
-                                  </a>
-                                </li>
-                              </ul>
+                                            {{-- <li class="list-item">
+                                              <a class="btn btn-link" href="#">
+                                              <h5><i class="fas fa-ellipsis-h"></i> Opciones</h5>
+                                              </a>
+                                            </li>
+                                          </ul> --}}
+{{--
+            								<button type="button" class="btn btn-primary btn-sm">Chamullar</button> --}}
 
 
+                          </div>
 
-								<button type="button" class="btn btn-primary btn-sm">Chamullar</button>
-
-								</button>
-
-                    				</div>
 
                    <!-- aqui va el post -->
-				    
+
 					     <posts></posts>
-					  
-					  
-					   
-				
-				        
-                    		
 
 
 
                     <!-- ESTO ES CANVAS DERECHO -->
-                    <div class="col-md-2">
+                    <div class="col-md-2 ">
 
                     <!-- buscador -->
-
-                    <nav class="navbar navbar-light bg-white">
-                      <form class="form-inline">
-                        <input class="form-control mr-sm-2" id="buscador" type="search" placeholder="????" aria-label="Search">
-                        <button class="btn btn-primary btn-sm my-2 my-sm-0 botonBuscar" type="submit">Buscar</button>
+                    {{-- <div class="justify-content-sm-end"> style="min-height: 80vh;" --}}
+                    <nav class="navbar " >
+                      <img class="img-fluid justify-content-sm-start" alt="Responsive image" src="/images/tglobo.png" style="display:block; margin-left: auto; margin-right: auto; width:90%; margin-bottom: 50px; margin-top: 20px;" />
+                      {{-- navbar-light bg-white --}}
+                      <form class="form-inline" type="get" action="{{route('friendship')}}" name="buscador">
+                        <input class="form-control justify-content-sm-end" id="buscador" type="search" name="buscador" placeholder="Ej. La Mona" aria-label="Search" >
+                        {{-- mr-sm-4 --}}
+                        <button class="btn btn-warning botonBuscar d-flex flex-row-reverse"  style=" color: white; background-color: #ff6000; margin-bottom: 10px;"   type="submit">Buscar Amigos</button>
+                        {{-- btn-sm my-2 my-sm-0  --}}
                       </form>
                     </nav>
+                    </div>
 
 
-                    <div class="tendencias  fondoGris">
+                    {{-- <div class="tendencias  fondoGris">
                                 <h4>
                                   Tendencias
                                 </h4>
@@ -144,8 +140,8 @@
                                   </a>
                     						</li>
 
-                    					</ul>
-                    					<h3>
+                    					</ul> --}}
+                    					{{-- <h3>
                     						Otros en tu zona:
                     					</h3>
                     					<ul class="list-unstyled">
@@ -189,7 +185,7 @@
                     							BarthSimp
                                   </a>
                     						</li>
-                    					</ul>
+                    					</ul> --}}
                     				</div>
 
 
@@ -204,9 +200,6 @@
                     </div>
 
 
-
-
-
                     <!--  FIN DE  HOME -->
 
 
@@ -218,6 +211,6 @@
     </div>
 </div>
 
-	
+
 </div>
 @endsection

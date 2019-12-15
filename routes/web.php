@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/solicitud/{id}', 'solicitudController@solicitud')->name ('solicitud');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/posts','ControllerPosts@index');
@@ -24,3 +25,6 @@ Route::get('/posts','ControllerPosts@index');
 Route::get('/nombreUser', 'ControllerPosts@devolverUser');
 
 Route::post('/regPost', 'ControllerPosts@store');
+
+
+Route::get('/friendship', 'friendsController@find')->name('friendship');
