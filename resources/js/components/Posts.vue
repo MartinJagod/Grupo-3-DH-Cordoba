@@ -63,9 +63,19 @@
 
                     	      <div class="container fondoDiv" id="centrali" >
 							    
-									<ul v-for="post in arrayPost" :key="post.id">
-											<li v-text="post.text_post"></li>
-											</li>
+									<ul v-for="post in arrayPost" :key="post.id" class="list-group">
+											<li class="list-group-item">
+                                            
+                                                 <div class="card w-75">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title" v-text="post.usuario"> </h5>
+                                                        <p class="card-text" v-text="post.text_post"></p>
+                                                        <a href="#" class="btn btn-primary">Me gusta</a>
+                                                    </div>
+                                                </div>
+                                            
+                                            </li>
+											
 									</ul>
                     			 
                     		  </div>
@@ -77,12 +87,14 @@
 
 <script>
 let user=document.head.querySelector('meta[name="user"]');
+let nomusu=JSON.parse(user.content)
 
 export default {
     data(){
         return {
             textpost : '',
-            arrayPost : []
+            arrayPost : [],
+            nomuser : ''
         }
     },
     computed : {
@@ -90,6 +102,11 @@ export default {
             let nombre=JSON.parse(user.content);
             return nombre.name.toUpperCase();
         }
+
+
+        
+
+        
     },
     methods : {
         mostrarPosts(){
@@ -97,8 +114,11 @@ export default {
                 axios.get('/posts')
                 .then(function (response) {
                     // handle success
+                    
+                   var respuesta=response.data;
                     me.arrayPost=response.data;
-                    // console.log(me.arrayPost);
+
+                    console.log(respuesta.data);
                 })
                 .catch(function (error) {
                     // handle error
@@ -109,19 +129,43 @@ export default {
         registrarPost(){
                 let me=this;
                axios.post('/regPost', {
-                    'posteo' : this.textpost
+                    'posteo' : this.textpost,
+                    'id_user'   : nomusu['id']
                     
                 })
                 .then(function (response) {
-                    console.log(response.data);
+                    // console.log(response.data);
                     me.mostrarPosts();
                 })
                 .catch(function (error) {
-                    console.log('no se que verga hace');
+                    console.log('error al hacer el post');
                 });
             
 
-           }
+           },
+
+        mostrarNombreUser: function(idUser){
+            let me=this;
+            
+            var url='/nombreUser?idus=' + idUser;
+                axios.get(url)
+                .then(function (response) {
+                    // handle success
+                    // console.log(response.data.name);
+                    // me.nomuser=response.data.name;
+                
+                    
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log('no funciona nada');
+                });
+
+             
+
+        }
+
+     
     },
 
     mounted(){

@@ -18,7 +18,7 @@ class CreateTablePostUser extends Migration
             $table->timestamps();
             $table->integer('user_id_post');
             $table->text('text_post');
-            $table->integer('id_photo');
+            $table->integer('id_photo')->nullable();
         });
     }
 

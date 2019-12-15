@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+  
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -70,9 +71,10 @@
             </div>
         </div>
     </div>
+   
 </div>
 @endsection
-{{-- <div class="container-fluid  col-md-12 banner principallogin ">
+<!-- {{-- <div class="container-fluid  col-md-12 banner principallogin ">
   <div class="row col-md-12 banner ">
 
     <div class=" container col-md-4 fondoGris">
@@ -108,4 +110,4 @@
     </div>
   </div>
 
-</div> --}}
+</div> --}} -->

@@ -1774,13 +1774,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _user = document.head.querySelector('meta[name="user"]');
 
+var nomusu = JSON.parse(_user.content);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       textpost: '',
-      arrayPost: []
+      arrayPost: [],
+      nomuser: ''
     };
   },
   computed: {
@@ -1794,7 +1806,9 @@ var _user = document.head.querySelector('meta[name="user"]');
       var me = this;
       axios.get('/posts').then(function (response) {
         // handle success
-        me.arrayPost = response.data; // console.log(me.arrayPost);
+        var respuesta = response.data;
+        me.arrayPost = response.data;
+        console.log(response);
       })["catch"](function (error) {
         // handle error
         console.log(error);
@@ -1803,12 +1817,24 @@ var _user = document.head.querySelector('meta[name="user"]');
     registrarPost: function registrarPost() {
       var me = this;
       axios.post('/regPost', {
-        'posteo': this.textpost
+        'posteo': this.textpost,
+        'id_user': nomusu['id']
       }).then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         me.mostrarPosts();
       })["catch"](function (error) {
-        console.log('no se que verga hace');
+        console.log('error al hacer el post');
+      });
+    },
+    mostrarNombreUser: function mostrarNombreUser(idUser) {
+      var me = this;
+      var url = '/nombreUser?idus=' + idUser;
+      axios.get(url).then(function (response) {// handle success
+        // console.log(response.data.name);
+        // me.nomuser=response.data.name;
+      })["catch"](function (error) {
+        // handle error
+        console.log('no funciona nada');
       });
     }
   },
@@ -37275,8 +37301,28 @@ var render = function() {
         "div",
         { staticClass: "container fondoDiv", attrs: { id: "centrali" } },
         _vm._l(_vm.arrayPost, function(post) {
-          return _c("ul", { key: post.id }, [
-            _c("li", { domProps: { textContent: _vm._s(post.text_post) } })
+          return _c("ul", { key: post.id, staticClass: "list-group" }, [
+            _c("li", { staticClass: "list-group-item" }, [
+              _c("div", { staticClass: "card w-75" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("h5", {
+                    staticClass: "card-title",
+                    domProps: { textContent: _vm._s(post.usuario) }
+                  }),
+                  _vm._v(" "),
+                  _c("p", {
+                    staticClass: "card-text",
+                    domProps: { textContent: _vm._s(post.text_post) }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                    [_vm._v("Me gusta")]
+                  )
+                ])
+              ])
+            ])
           ])
         }),
         0
