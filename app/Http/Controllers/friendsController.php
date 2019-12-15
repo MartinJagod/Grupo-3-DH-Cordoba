@@ -14,23 +14,27 @@ class friendsController extends Controller
       $friend=User::where('name','LIKE', "%{$_GET['buscador']}%")
       ->orwhere('surname','LIKE', "%{$_GET['buscador']}%")
       ->get();
-      $vac=compact('friend');
-      return view('friendship' , $vac);
-    }
-/*
- public function controlAmistad($data){
- $ususarioLogeado=Auth::user();
- $idUsuarioLog= $ususarioLogeado['id'];
-  $friendship=friend::where('id_user1','=',$idUsuarioLog)->
- orwhere('id_user2','=',$idUsuarioLog)->get();
- $data2=[];
- foreach ($friendship as $value) {
-if ($value['id_user1']!=$idUsuarioLog){
-   $data2[]=["id_user2"=>$value['id'] , "name"=>$value['name'] , "surname"=>$value['surname']];}
 
- }
+      $ususarioLogeado=Auth::user();
+      $idUsuarioLog= $ususarioLogeado['id'];
+       $friendship=friend::where('id_user1','=',$idUsuarioLog)->
+      orwhere('id_user2','=',$idUsuarioLog)->get();
+      $amigos=[];
 
+        foreach ($friendship as $value) {
+          $amigos[] = $value["id_user1"];
+          $amigos[] = $value['id_user2'];};
 
+      $elemento=0;
+      $idValue=[];
+      $amigoDepurado=array_unique($amigos);
 
-}*/
-}
+      foreach ($friend as $value) {
+        $idValue=$value['id'];
+      if (in_array($idValue, $amigoDepurado)) {
+        $value["status"]=9;
+          $friend[$elemento]->$value['status'];}
+        $elemento++;}
+
+        return view("friendship",compact('friend'));
+    }}

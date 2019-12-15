@@ -1,20 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<div class='container'> <ul>
-  @forelse($friend as $frien)
-    <li>
-      <a class="btn btn-primary" href='/solicitud/{{$frien->id}}' role="button">{{ucfirst($frien->surname)}} {{ucfirst($frien->name)}}</a>
-      <br>
-      <br>
-    </li>
-  @empty
-    <p>
-      No encontramos a la persona que buscas    </p>
 
-  @endforelse
-  </div>
-@endsection
+
+<div class="container">
+
+
+  <ul>
+    @forelse($friend as $frien)
+
+      <li>
+        @if ($frien->status==9)
+          <a class="btn btn-outline-success" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}} 'Ya son amigo'</a>
+        @else
+          <a class="btn btn-outline-primary" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}}</a>
+
+        @endif
+          <br>
+          <br>
+        </li>
+    @empty
+      <p>      No encontramos a la persona que buscas    </p>
+    @endforelse
+  </ul>
+
+</div>
+
 {{-- <div class="container-fluid  col-md-12 banner principallogin ">
   <div class="row col-md-12 banner ">
 
