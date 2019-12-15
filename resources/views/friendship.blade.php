@@ -1,18 +1,16 @@
-
 @extends('layouts.app')
 
 @section('content')
 <div class='container'> <ul>
   @forelse($friend as $frien)
     <li>
-      <a class="btn btn-primary" action='route(friendsController@requestFriend,{{ucfirst($frien->id)}})' role="button">{{ucfirst($frien->surname)}} {{ucfirst($frien->name)}}</a>
-      {{--<button type="button" class="btn btn-primary btn-sm">Agregar a amigos</button>--}}
-      <br><br>
+      <a class="btn btn-primary" href='/solicitud/{{$frien->id}}' role="button">{{ucfirst($frien->surname)}} {{ucfirst($frien->name)}}</a>
+      <br>
+      <br>
     </li>
   @empty
     <p>
-      No encontramos a tu Amigos
-    </p>
+      No encontramos a la persona que buscas    </p>
 
   @endforelse
   </div>
