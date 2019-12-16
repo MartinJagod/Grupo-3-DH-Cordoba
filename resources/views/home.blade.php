@@ -33,13 +33,14 @@
 
 
                                 						<li class="list-item">
-                          												<a class="btn btn-link" href="#">
+                          												<a class="btn btn-link" href="#" >
                           												<h5><i class="fas fa-home"></i> Fotos</h5>
                           												</a>
                                 						</li>
 
                                             <li class="list-item">
-                                                  <a class="btn btn-link" href="#">
+
+                                                  <a class="btn btn-link" href='/notificacion'>
                                                   <h5><i class="fas fa-bell"></i>  Notificaciones</h5>
                                                   </a>
             								               </li>
@@ -96,6 +97,7 @@
                         {{-- btn-sm my-2 my-sm-0  --}}
                       </form>
                     </nav>
+
                     </div>
 
 

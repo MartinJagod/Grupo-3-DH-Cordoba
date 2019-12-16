@@ -26,6 +26,8 @@
 
 </div>
 
+@endsection
+
 {{-- <div class="container-fluid  col-md-12 banner principallogin ">
   <div class="row col-md-12 banner ">
 

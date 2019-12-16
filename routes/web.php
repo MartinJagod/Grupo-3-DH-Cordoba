@@ -24,5 +24,6 @@ Route::get('/posts','ControllerPosts@index');
 
 Route::post('/regPost', 'ControllerPosts@store');
 
-
+Route::get('/notificacion','notificacioneController@notificacion')->name('notificacion');
+Route::get('/respuestasolicitud/{resp}/{id}','notificacioneController@respuestasolicitud')->name('respuestasolicitud');
 Route::get('/friendship', 'friendsController@find')->name('friendship');
