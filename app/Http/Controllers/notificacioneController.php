@@ -9,7 +9,7 @@ use App\user;
 
 class notificacioneController extends Controller
 {
-
+/*Esta funcion busca las solicitudes de amistad*/
     public function notificacion(){
       $ususarioLogeado=Auth::user();
       $idUsuarioLog= $ususarioLogeado['id'];
@@ -20,7 +20,7 @@ class notificacioneController extends Controller
         $amigo[]=user::find($id);  }
       return view ('notificaciones',compact('amigo'));  }
 
-
+/*Esta funcion cambia status de solicitud 0= pendiente, 1=aceptada, 3=rechazada*/
       public function respuestasolicitud ($resp, $id){
         $id=(int)$id;
           $usuario= Auth::user();

@@ -7,6 +7,7 @@ use App\friend;
 use App\user;
 class solicitudController extends Controller
 {
+  //Esta funcion controla si ya existe la solicitud o de no ser asi carga una solicitud//
   public function solicitud ($id){
     $ususarioLogeado=Auth::user();
     $idUsuarioLog= $ususarioLogeado['id'];

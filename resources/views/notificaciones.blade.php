@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+{{-- Esto muestra las solicitudes de amistar y podes Aceptar o Rechazar--}}
 <div class="container">
   <ul>
         @forelse ($amigo as $value)
