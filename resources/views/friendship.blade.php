@@ -23,7 +23,7 @@
       <p>      No encontramos a la persona que buscas    </p>
     @endforelse
   </ul>
-
+  
 </div>
 
 @endsection
