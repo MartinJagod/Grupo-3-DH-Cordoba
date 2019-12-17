@@ -9,7 +9,7 @@
     <meta name="user" content="{{ Auth::user() }}">
 
 
-    <title>{{ config('Coordobes') }}</title>
+    <title>{{ config('Cordoobeses') }}</title>
 
     <!-- Scripts -->
 
@@ -20,7 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -28,11 +28,14 @@
             <div class="container" >
 
                 @guest
-                <a class="navbar-brand" href="{{ url('/') }}"></a>
+                {{-- <a class="navbar-brand" href="{{ url('/') }}"></a>
+                <a class="navbar-brand" href="{{ url('/home') }}">
+                    {{ 'Inicio' }}
+                </a> --}}
+                @endguest
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ 'Inicio' }}
                 </a>
-                @endguest
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
