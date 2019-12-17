@@ -43,11 +43,11 @@
             <li>
                 @if ($frien->status==9)
                   {{-- <a class="btn btn-outline-success" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}} 'Ya son amigos'</a> --}}
-                  <p href='/solicitud/{{$frien->id}}'> Con {{ucfirst($frien->name)}} ya son amigos</p>
+                  <p href='/solicitud/{{$frien->id}}'> Con {{ucfirst($frien->name)}} {{ucfirst($frien->surname)}} ya son amigos</p>
 
                 @else
 
-                  <a class="btn btn-outline-primary" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}}</a>
+                  <a class="btn btn-outline-primary" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}} {{ucfirst($frien->surname)}}</a>
                 @endif
               </li>
             @endif
