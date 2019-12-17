@@ -16,8 +16,8 @@ class notificacioneController extends Controller
       $friends=friend::where('id_user2','=',$idUsuarioLog)->get();
       $amigo=[];
       foreach ($friends as $value) {
-        $id=$value{'id_user1'};
-        $amigo[]=user::find($id);  }
+        if ($value{'status'} == 0){$id=$value{'id_user1'};
+          $amigo[]=user::find($id); }}
       return view ('notificaciones',compact('amigo'));  }
 
 /*Esta funcion cambia status de solicitud 0= pendiente, 1=aceptada, 3=rechazada*/
@@ -37,6 +37,7 @@ class notificacioneController extends Controller
 
             $solicitar->status=1;
             $solicitar->save();
+            return redirect ('/notificacion');
           }else {
             if ($resp==2) {
             $solicitar=friend::find($numeroSoli);

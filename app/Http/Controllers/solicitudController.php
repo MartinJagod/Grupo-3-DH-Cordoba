@@ -21,7 +21,9 @@ class solicitudController extends Controller
     $amigos= array_unique($amigos);
 
     if (in_array($id, $amigos)) {
-    echo("Ya solicitaste amistad a este usuario"); exit; return redirect('/home');}
+    echo("Ya solicitaste amistad a este usuario");
+    sleep(2);
+    return redirect('/home');}
     else {
     $usuario= Auth::user();
     $solicitar= new friend();

@@ -35,7 +35,7 @@
 <div class="col-md-7">
 
   <div class="container" style="margin-top: 15%">
-    <h3 style="margin-top: 5%; text-align: center;">  Hora de tomar decisiones:</h3>
+    <h3 style="margin-top: 5%; text-align: center;">Hora de tomar decisiones:</h3>
 
     <ul>
           @forelse ($amigo as $value)
@@ -51,7 +51,8 @@
 
             @endif
           @empty
-      <p> No tenes notificaciones </p>
+            <br>
+      <p style="margin-left:25%"> No tenes notificaciones pendientes </p>
           @endforelse
   </ul>
         </div>

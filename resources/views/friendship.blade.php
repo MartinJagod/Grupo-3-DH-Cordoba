@@ -39,16 +39,18 @@
         <ul>
           @forelse($friend as $frien)
 
+          @if(Auth::user()->id!==$frien->id)
             <li>
-              @if ($frien->status==9)
-                {{-- <a class="btn btn-outline-success" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}} 'Ya son amigos'</a> --}}
-                <p href='/solicitud/{{$frien->id}}'> Con {{ucfirst($frien->name)}} ya son amigos</p>
-              @else
-                <a class="btn btn-outline-primary" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}}</a>
+                @if ($frien->status==9)
+                  {{-- <a class="btn btn-outline-success" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}} 'Ya son amigos'</a> --}}
+                  <p href='/solicitud/{{$frien->id}}'> Con {{ucfirst($frien->name)}} ya son amigos</p>
 
-              @endif
+                @else
 
+                  <a class="btn btn-outline-primary" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}}</a>
+                @endif
               </li>
+            @endif
           @empty
             <p>      No encontramos a la persona que buscas    </p>
           @endforelse
