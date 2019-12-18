@@ -6,11 +6,15 @@
     <p>
       <label for ='pais'>Donde estas: </label>
       <br>
-      <select class="selectpicker" name="ubicacion" title="Ubicacion en el mundo" >
+      
+      <form class="" name="ubicacion" accion="/UbicacionMundial@distanceCalculation" method="post">
+{{ csrf_field() }}
+      <select class="selectpicker"  name="ubicacion" title="Ubicacion en el mundo" >
         @foreach ($paisesArray as $value)
           <option>{{$value['name']}}</option>
         @endforeach
-
-        Estas a
       </select>
+      <button type="submit" name="button"> Aca estoy!!!</button>
+    </form>
+
 @endsection
