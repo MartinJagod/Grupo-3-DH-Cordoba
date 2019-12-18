@@ -4,150 +4,68 @@
             <!-- ESTO ES CANVAS CENTRAL -->
 
 
-              <div class="col-md-7 border">
-
-                           <p>
-                           Bienvenido:
-                           </p>
-                                <h2 class="border-bottom">
-
-                                  User:  {{user}}
-                                </h2>
-                                <div class="row justify-content-center mb-1" >
-                                     <form class="form-inline" method="post" action="">
-                                              <input class="form-control mr-sm-4" type="text" placeholder="Que estas haciendo?" aria-label="Search" v-model="textpost">
-                                               <button class="btn btn-primary btn-lg my-2 my-sm-0" type="button" @click="registrarPost()">Publicar</button>
-                                          </form>
+           
+                <div>
+                    
+               
+                           
+                                <div class="row border-bottom mb-3">
+                                
+                                      <div class="col-9 mb-3"> 
+                                            <input class="form-control" type="text" placeholder="Que estas haciendo?" aria-label="Search" v-model="textpost" @keyup.enter="registrarPost()">
+                                          
+                                      </div>
+                                      <div class="col-3 mb-3">
+                                         <button class="btn btn-primary form-control" type="button" @click="registrarPost()">Publicar</button>
+                                          
+                                      </div>
+                                     
+                                   
+                                    
+                                             
+                                         
+                                    
                                 </div>
+                                   
+                             
+                                    
+                             
+                               
 
-                                    <!-- que estas haciendo -->
-
-                          			<div class="container border-bottom fondoGris">
-
-                                    	<div class="row  border-bottom">
-                                    		<div class="col-md-12">
-                                    			<div class="row">
-                                    				<div class="col-md-3">
-                                    		        	 <i class="fas fa-user fa-6x"></i>
-                                    				</div>
-                                    				<div class="col-md-9">
-
-                                    					<div class="row">
-                                    						<div class="col-md-6">
-                                    							<div class="row">
-                                    								<div class="col-md-4">
-
-                                    									<button type="button" class="btn btn-primary btn-sm">
-                                    										<i class="far fa-image fa-2x"></i>
-                                    									</button>
-                                    								</div>
-                                    								<div class="col-md-4 ">
-
-                                                      					<button type="button" class="btn btn-primary btn-sm">
-                                    										<i class="far fa-smile fa-2x"></i>
-                                    									</button>
-                                    								</div>
-                                    								<div class="col-md-4">
-
-                          												<button type="button" class="btn btn-primary btn-sm">
-                                    										<i class="fas fa-question fa-2x"></i>
-                                    									</button>
-                                    								</div>
-                                    							</div>
-                                    						</div>
-
-                                    					</div>
-
-                                    				</div>
-
-                                    			</div>
-                                    		</div>
-                                    	</div>
-
-
-
-                          	      <div class="container fondoDiv" id="centrali" >
-
-      									<ul v-for="post in arrayPost" :key="post.id">
-      											<li v-text="post.text_post"></li>
-      											</li>
-      									</ul>
-
-                          		  </div>
-
-                          </div>
-<<<<<<< HEAD
+                               
                                
                               <!-- que estas haciendo -->
 
                     			<div class="container border-bottom fondoGris">
 
-                              	<div class="row  border-bottom">
-                              		<div class="col-md-12">
-                              			<div class="row">
-                              				<div class="col-md-3">
-                              		        	 <i class="fas fa-user fa-6x"></i>
-                              				</div>
-                              				<div class="col-md-9">
+                             
 
-                              					<div class="row">
-                              						<div class="col-md-6">
-                              							<div class="row">
-                              								<div class="col-md-4">
-
-                              									<button type="button" class="btn btn-primary btn-sm">
-                              										<i class="far fa-image fa-2x"></i>
-                              									</button>
-                              								</div>
-                              								<div class="col-md-4 ">
-
-                                                					<button type="button" class="btn btn-primary btn-sm">
-                              										<i class="far fa-smile fa-2x"></i>
-                              									</button>
-                              								</div>
-                              								<div class="col-md-4">
-
-                    												<button type="button" class="btn btn-primary btn-sm">
-                              										<i class="fas fa-question fa-2x"></i>
-                              									</button>
-                              								</div>
-                              							</div>
-                              						</div>
-
-                              					</div>
-
-                              				</div>
-
-                              			</div>
-                              		</div>
-                              	</div>
-                            
 
 
                     	      <div class="container fondoDiv" id="centrali" >
-							    
-									<ul v-for="post in arrayPost" :key="post.id" class="list-group">
-											<li class="list-group-item">
-                                            
-                                                 <div class="card w-75">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title" v-text="post.usuario"> </h5>
-                                                        <p class="card-text" v-text="post.text_post"></p>
-                                                        <a href="#" class="btn btn-primary">Me gusta</a>
+                               
+                                <ul class="list-group" v-for="post in arrayPost" :key="post.id">
+                                      
+                                   <li class="list-group mb-3">
+                                            <div class="card border-secondary ">
+                                                    <div class="card-header  text-white bg-secondary"  v-text="post.usuario">
+                                                    
                                                     </div>
-                                                </div>
-                                            
-                                            </li>
-											
-									</ul>
+                                                    <div class="card-body">
+                                                        <blockquote class="blockquote mb-0">
+                                                        <p v-text="post.text_post"></p>
+                                                        <footer class="blockquote-footer"> <a href="#" class="btn btn-primary btn-sm">Me gusta</a></footer>
+                                                        </blockquote>
+                                                    </div>
+                                            </div>
+
+                                    </li>
+                                </ul>
                     			 
                     		  </div>
 
                     </div>
-  </div>
-=======
         </div>
->>>>>>> ef5898c736477455aaa9dca8316880c7f5df0782
                     <!-- se cierra canvas central -->
 </template>
 
@@ -156,6 +74,7 @@ let user=document.head.querySelector('meta[name="user"]');
 let nomusu=JSON.parse(user.content)
 
 export default {
+    props: ["usuario"],
     data(){
         return {
             textpost : '',
@@ -195,18 +114,15 @@ export default {
         registrarPost(){
                 let me=this;
                axios.post('/regPost', {
-<<<<<<< HEAD
                     'posteo' : this.textpost,
                     'id_user'   : nomusu['id']
                     
-=======
-                    'posteo' : this.textpost
-
->>>>>>> ef5898c736477455aaa9dca8316880c7f5df0782
                 })
                 .then(function (response) {
                     // console.log(response.data);
-                    me.mostrarPosts();
+                  
+                    // this.textpost='';
+                      me.mostrarPosts();
                 })
                 .catch(function (error) {
                     console.log('error al hacer el post');
@@ -241,6 +157,7 @@ export default {
 
     mounted(){
         this.mostrarPosts();
+        console.log(this.usuario)
     }
 
 
