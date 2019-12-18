@@ -2,29 +2,90 @@
 
 @section('content')
 
+  <body>
+  <div class="container espaciado">
+  {{-- <div class="row">
+  <div class="col-md-12"> --}}
 
-<div class="container">
+
+  <!-- ESTO ES CANVAS IZQUIERDO -->
+
+  <div class="row">
+  <div class="col-md-3 minheight">
+    <img class="img-fluid" alt="Responsive image" src="/images/cordoo.png" style="display:block; margin-left: auto; margin-right: auto; width:90%; margin-bottom: 50px; margin-top: 20px;" />
+        {{-- <ul class="list-unstyled" style="min-height: 80vh;">
+            <li class="list-item">
+            	<a class="btn btn-link" href="#" >
+            	<h5><i class="fas fa-home"></i> Fotos</h5>
+            	</a>
+            </li>
+                <li class="list-item">
+                <a class="btn btn-link" href='/notificacion'>
+                <h5><i class="fas fa-bell"></i>  Notificaciones</h5>
+              </a>
+            </li>
+            </ul> --}}
+  </div>
 
 
-  <ul>
-    @forelse($friend as $frien)
+  <!-- ESTO ES CANVAS CENTRAL -->
 
-      <li>
-        @if ($frien->status==9)
-          <a class="btn btn-outline-success" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}} 'Ya son amigo'</a>
-        @else
-          <a class="btn btn-outline-primary" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}}</a>
+  {{-- <div class="row"> --}}
+  <div class="col-md-7">
 
-        @endif
-          <br>
-          <br>
-        </li>
-    @empty
-      <p>      No encontramos a la persona que buscas    </p>
-    @endforelse
-  </ul>
+    <div class="container" style="margin-top: 15%">
+      <h3 style="margin-top: 5%; text-align: center;">  Mis Amistades:</h3>
 
-</div>
+        <ul>
+          @forelse($friend as $frien)
+
+          @if(Auth::user()->id!==$frien->id)
+            <li>
+                @if ($frien->status==9)
+                  {{-- <a class="btn btn-outline-success" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}} 'Ya son amigos'</a> --}}
+                  <p href='/solicitud/{{$frien->id}}'> Con {{ucfirst($frien->name)}} {{ucfirst($frien->surname)}} ya son amigos</p>
+
+                @else
+
+                  <a class="btn btn-outline-primary" href='/solicitud/{{$frien->id}}' role="button"> {{ucfirst($frien->name)}} {{ucfirst($frien->surname)}}</a>
+                @endif
+              </li>
+            @endif
+          @empty
+            <p>      No encontramos a la persona que buscas    </p>
+          @endforelse
+        </ul>
+
+      </div>
+
+  </div>
+
+
+  <!-- ESTO ES CANVAS DERECHO -->
+  <div class="col-md-2 ">
+    <div class="justify-content-sm-end">
+        <nav class="navbar " >
+          <img class="img-fluid justify-content-sm-start" alt="Responsive image" src="/images/tglobo.png" style="display:block; margin-left: auto; margin-right: auto; width:90%; margin-bottom: 50px; margin-top: 20px;" />
+          {{-- <form class="form-inline" type="get" action="{{route('friendship')}}" name="buscador">
+          <input class="form-control justify-content-sm-end" id="buscador" type="search" name="buscador" placeholder="Ej. La Mona" aria-label="Search" >
+          <button class="btn btn-warning botonBuscar d-flex flex-row-reverse"  style=" color: white; background-color: #ff6000; margin-bottom: 10px;"   type="submit">Buscar Amigos</button> --}}
+          </form>
+        </nav>
+  </div>
+  </div>
+  </div>
+
+  </div>
+  </div>
+  </div>
+  </body>
+
+
+
+
+
+
+@endsection
 
 {{-- <div class="container-fluid  col-md-12 banner principallogin ">
   <div class="row col-md-12 banner ">

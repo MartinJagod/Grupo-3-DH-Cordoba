@@ -5,6 +5,11 @@
 
 }
 
+.minheight{
+  min-height: 80vh;
+}
+
+
 #buscador {
   width: 100%;
 

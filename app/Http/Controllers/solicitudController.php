@@ -7,6 +7,7 @@ use App\friend;
 use App\user;
 class solicitudController extends Controller
 {
+  //Esta funcion controla si ya existe la solicitud o de no ser asi carga una solicitud//
   public function solicitud ($id){
     $ususarioLogeado=Auth::user();
     $idUsuarioLog= $ususarioLogeado['id'];
@@ -20,7 +21,9 @@ class solicitudController extends Controller
     $amigos= array_unique($amigos);
 
     if (in_array($id, $amigos)) {
-    echo("Ya solicitaste amistad a este usuario"); exit; return redirect('/home');}
+    echo("Ya solicitaste amistad a este usuario");
+    sleep(2);
+    return redirect('/home');}
     else {
     $usuario= Auth::user();
     $solicitar= new friend();

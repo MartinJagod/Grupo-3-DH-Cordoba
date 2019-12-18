@@ -32,14 +32,25 @@
               							<ul class="list-unstyled">
 
 
+<<<<<<< HEAD
                                 						<li class="list-item" @click="menu=1">
                           												<a class="btn btn-link" href="#">
+=======
+                                						<li class="list-item">
+                          												<a class="btn btn-link" href="#" >
+>>>>>>> ed4477cead322b63c4f5416bc0c8328e79c42a07
                           												<h5><i class="fas fa-home"></i> Fotos</h5>
                           												</a>
                                 						</li>
 
+<<<<<<< HEAD
                                             <li class="list-item" @click="menu=2">
                                                   <a class="btn btn-link" href="#">
+=======
+                                            <li class="list-item">
+
+                                                  <a class="btn btn-link" href='/notificacion'>
+>>>>>>> ed4477cead322b63c4f5416bc0c8328e79c42a07
                                                   <h5><i class="fas fa-bell"></i>  Notificaciones</h5>
                                                   </a>
             								               </li>
@@ -123,6 +134,7 @@
                         {{-- btn-sm my-2 my-sm-0  --}}
                       </form>
                     </nav>
+
                     </div>
 
 
