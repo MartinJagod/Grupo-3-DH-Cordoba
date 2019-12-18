@@ -31,3 +31,5 @@ Route::post('/regPost', 'ControllerPosts@store');
 Route::get('/notificacion','notificacioneController@notificacion')->name('notificacion');
 Route::get('/respuestasolicitud/{resp}/{id}','notificacioneController@respuestasolicitud')->name('respuestasolicitud');
 Route::get('/friendship', 'friendsController@find')->name('friendship');
+Route::get('/UbicacionMundial','ubicacionController@ubicar');
+Route::post('/UbicacionMundial','ubicacionController@distanceCalculation')->name('distanciaUbicacionMundial');

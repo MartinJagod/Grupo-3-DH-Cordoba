@@ -27,12 +27,21 @@
         <nav  class="navbar navbar-expand-md navbar-light {{--bg-white--}} shadow-sm " id="flejeSup">
             <div class="container" >
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3e0773accf80055c5558011d583317c29288081e
 
                 @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
 
+<<<<<<< HEAD
 {{--
                 @guest --}}
+=======
+
+
+>>>>>>> 3e0773accf80055c5558011d583317c29288081e
                 {{-- <a class="navbar-brand" href="{{ url('/') }}"></a>
                 <a class="navbar-brand" href="{{ url('/home') }}">
 >>>>>>> ed4477cead322b63c4f5416bc0c8328e79c42a07

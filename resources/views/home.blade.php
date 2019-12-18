@@ -17,7 +17,7 @@
 
                     <!-- ESTO ES  HOME -->
 
-                    <div class="container espaciado fixed">
+                    <div class="container espaciado">
                     	<div class="row">
                         <div class="col-md-12">
 
@@ -25,49 +25,43 @@
         <!-- ESTO ES CANVAS IZQUIERDO -->
 
                 <div class="row">
-                    				<div class="col-md-3 " style="min-height: 80vh;">
+                    				<div class="col-md-3" style="min-height: 80vh;">
                               <img class="img-fluid" alt="Responsive image" src="/images/cordoo.png" style="display:block; margin-left: auto; margin-right: auto; width:90%; margin-bottom: 50px; margin-top: 20px;" />
 
 {{-- LISTADO CON OPCIONES MENU IZQUIERDO --}}
               							<ul class="list-unstyled">
 
+                              <li class="list-item">
+                                  <a class="btn btn-link" id="perfil" href="#">
+                                  <h5><i class="fas fa-user-circle"></i>fotos</h5>
+                                  </a>
+                              </li>
 
-<<<<<<< HEAD
-                                						<li class="list-item" @click="menu=1">
-                          												<a class="btn btn-link" href="#">
-=======
-                                						<li class="list-item">
-                          												<a class="btn btn-link" href="#" >
->>>>>>> ed4477cead322b63c4f5416bc0c8328e79c42a07
-                          												<h5><i class="fas fa-home"></i> Fotos</h5>
-                          												</a>
-                                						</li>
+                              <li class="list-item">
+                                  <a class="btn btn-link" id="Notificaciones" href="/notificacion">
+                                  <h5><i class="fas fa-user-circle"></i>Notificaciones</h5>
+                                  </a>
+            							   </li>
+                             <li class="list-item">
+                                 <a class="btn btn-link" id="Notificaciones" href="/UbicacionMundial">
+                                 <h5><i class="fas fa-user-circle"></i>Por donde andas?</h5>
+                                 </a>
+                            </li>
 
-<<<<<<< HEAD
-                                            <li class="list-item" @click="menu=2">
-                                                  <a class="btn btn-link" href="#">
-=======
-                                            <li class="list-item">
 
-                                                  <a class="btn btn-link" href='/notificacion'>
->>>>>>> ed4477cead322b63c4f5416bc0c8328e79c42a07
-                                                  <h5><i class="fas fa-bell"></i>  Notificaciones</h5>
-                                                  </a>
-            								               </li>
-
-                                            <li class="list-item" @click="menu=0">
+                                            {{-- <li class="list-item">
                                                 <a class="btn btn-link" id="mensajes" href="#">
-                                                <h5><i class="fas fa-envelope"></i>  Posts</h5>
+                                                <h5><i class="fas fa-envelope"></i>  Mensajes</h5>
                                                 </a>
             								               </li>
 
-                                            {{-- <li class="list-item">
+                                            <li class="list-item">
                                                 <a class="btn btn-link" href="#">
                                                 <h5><i class="fas fa-list-alt"></i> Listas</h5>
                                                 </a>
                                             </li> --}}
 
-                                            <li class="list-item" @click="menu=3">
+                                            <li class="list-item">
                                                 <a class="btn btn-link" id="perfil" href="#">
                                                 <h5><i class="fas fa-user-circle"></i>Perfil</h5>
                                                 </a>
@@ -86,36 +80,9 @@
                           </div>
 
 
-                   <!-- aqui va el canvas central -->
-              <div class="col-md-7 border">
+                   <!-- aqui va el post -->
 
-                      <p>Bienvenido:</p>
-                      <h2 class="border-bottom">
-
-                        User:  {{ Auth::user()->name }}
-                      </h2>
-                   <template v-if="menu==0">
-                      <posts :usuario="{{Auth::user()}}"></posts>
-                   </template>
-                   <template v-if="menu==1">
-                   <div>
-                   <h1>menu1</h1>
-                   </div>
-                     
-                   </template>
-                   <template v-if="menu==2">
-                   <div>
-                      <h1>menu 2</h1>
-                   </div>
-                    
-                   </template>
-                   <template v-if="menu==3">
-                     <div>
-                       <perfil></perfil>
-                     </div>
-                   </template>
-              </div>
-					     
+					     <posts></posts>
 
 
 
