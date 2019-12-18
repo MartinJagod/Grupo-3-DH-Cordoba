@@ -17,7 +17,7 @@
 
                     <!-- ESTO ES  HOME -->
 
-                    <div class="container espaciado">
+                    <div class="container espaciado fixed">
                     	<div class="row">
                         <div class="col-md-12">
 
@@ -25,7 +25,7 @@
         <!-- ESTO ES CANVAS IZQUIERDO -->
 
                 <div class="row">
-                    				<div class="col-md-3" style="min-height: 80vh;">
+                    				<div class="col-md-3 " style="min-height: 80vh;">
                               <img class="img-fluid" alt="Responsive image" src="/images/cordoo.png" style="display:block; margin-left: auto; margin-right: auto; width:90%; margin-bottom: 50px; margin-top: 20px;" />
 
 {{-- LISTADO CON OPCIONES MENU IZQUIERDO --}}
