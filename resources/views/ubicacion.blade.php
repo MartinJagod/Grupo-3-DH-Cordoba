@@ -10,5 +10,7 @@
         @foreach ($paisesArray as $value)
           <option>{{$value['name']}}</option>
         @endforeach
+
+        Estas a
       </select>
 @endsection

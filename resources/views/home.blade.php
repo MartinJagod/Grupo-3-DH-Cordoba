@@ -31,17 +31,23 @@
 {{-- LISTADO CON OPCIONES MENU IZQUIERDO --}}
               							<ul class="list-unstyled">
 
+                              <li class="list-item">
+                                  <a class="btn btn-link" id="perfil" href="#">
+                                  <h5><i class="fas fa-user-circle"></i>fotos</h5>
+                                  </a>
+                              </li>
 
- >
-                          												<h5><i class="fas fa-home"></i> Fotos</h5>
-                          												</a>
-                                						</li>
+                              <li class="list-item">
+                                  <a class="btn btn-link" id="Notificaciones" href="/notificacion">
+                                  <h5><i class="fas fa-user-circle"></i>Notificaciones</h5>
+                                  </a>
+            							   </li>
+                             <li class="list-item">
+                                 <a class="btn btn-link" id="Notificaciones" href="/UbicacionMundial">
+                                 <h5><i class="fas fa-user-circle"></i>Por donde andas?</h5>
+                                 </a>
+                            </li>
 
-                                            <li class="list-item">
-
-                                                 <h5><i class="fas fa-bell"></i>  Notificaciones</h5>
-                                                  </a>
-            								               </li>
 
                                             {{-- <li class="list-item">
                                                 <a class="btn btn-link" id="mensajes" href="#">
