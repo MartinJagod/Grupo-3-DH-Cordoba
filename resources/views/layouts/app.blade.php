@@ -27,12 +27,12 @@
         <nav  class="navbar navbar-expand-md navbar-light {{--bg-white--}} shadow-sm " id="flejeSup">
             <div class="container" >
 <<<<<<< HEAD
-               
-                @guest
-                <a class="navbar-brand" href="{{ url('/') }}">
-=======
 
                 @guest
+                <a class="navbar-brand" href="{{ url('/') }}">
+
+{{--
+                @guest --}}
                 {{-- <a class="navbar-brand" href="{{ url('/') }}"></a>
                 <a class="navbar-brand" href="{{ url('/home') }}">
 >>>>>>> ed4477cead322b63c4f5416bc0c8328e79c42a07
