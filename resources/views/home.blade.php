@@ -58,7 +58,7 @@
                                             </li> --}}
 
                                             <li class="list-item">
-                                                <a class="btn btn-link" id="perfil" href="#">
+                                                <a class="btn btn-link" id="perfil" href='ubicacion'>
                                                 <h5><i class="fas fa-user-circle"></i>Perfil</h5>
                                                 </a>
             								                </li>
