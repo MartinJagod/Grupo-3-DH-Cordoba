@@ -32,16 +32,14 @@
               							<ul class="list-unstyled">
 
 
-                                						<li class="list-item">
-                          												<a class="btn btn-link" href="#" >
+ >
                           												<h5><i class="fas fa-home"></i> Fotos</h5>
                           												</a>
                                 						</li>
 
                                             <li class="list-item">
 
-                                                  <a class="btn btn-link" href='/notificacion'>
-                                                  <h5><i class="fas fa-bell"></i>  Notificaciones</h5>
+                                                 <h5><i class="fas fa-bell"></i>  Notificaciones</h5>
                                                   </a>
             								               </li>
 
@@ -58,7 +56,7 @@
                                             </li> --}}
 
                                             <li class="list-item">
-                                                <a class="btn btn-link" id="perfil" href='ubicacion'>
+                                                <a class="btn btn-link" id="perfil" href="#">
                                                 <h5><i class="fas fa-user-circle"></i>Perfil</h5>
                                                 </a>
             								                </li>

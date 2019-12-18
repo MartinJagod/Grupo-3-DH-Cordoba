@@ -38,6 +38,6 @@ class ControllerPosts extends Controller
         $postes=Post::find($request->idus);
         // dd($postes->user);
     
-        return $postes->user;
+        return $postes;
     }
 }
