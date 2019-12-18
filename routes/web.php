@@ -24,6 +24,8 @@ Route::get('/posts','ControllerPosts@index');
 
 Route::get('/nombreUser', 'ControllerPosts@devolverUser');
 
+Route::put('/updateUser','UserController@actualizarUsuario');
+
 Route::post('/regPost', 'ControllerPosts@store');
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -26,13 +26,9 @@
     <div id="app">
         <nav  class="navbar navbar-expand-md navbar-light {{--bg-white--}} shadow-sm " id="flejeSup">
             <div class="container" >
-<<<<<<< HEAD
                
                 @guest
                 <a class="navbar-brand" href="{{ url('/') }}">
-=======
-                <a class="navbar-brand" href="{{ url('/home') }}">
->>>>>>> ef5898c736477455aaa9dca8316880c7f5df0782
                     {{ 'Inicio' }}
                 </a>
                 @endguest
