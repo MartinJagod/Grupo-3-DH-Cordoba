@@ -39,8 +39,9 @@
 
                               <li class="list-item">
                                   <a class="btn btn-link" id="Notificaciones" href="/notificacion">
-                                  <h5><i class="fas fa-user-circle"></i>Notificaciones</h5>
+                                  <h5><i class="fas fa-user-circle"></i>Notificaciones   @if($hayNoti) <img src="/images/noti.png" style="display:block; margin-left: 20px; float:right; width: 20px;"> @endif </h5>
                                   </a>
+                                  {{-- @if (isset ($amigo)) @endif  @empty @endforelse  --}}
             							   </li>
                              <li class="list-item">
                                  <a class="btn btn-link" id="Notificaciones" href="/UbicacionMundial">
@@ -49,33 +50,12 @@
                             </li>
 
 
-                                            {{-- <li class="list-item">
-                                                <a class="btn btn-link" id="mensajes" href="#">
-                                                <h5><i class="fas fa-envelope"></i>  Mensajes</h5>
-                                                </a>
-            								               </li>
 
-                                            <li class="list-item">
-                                                <a class="btn btn-link" href="#">
-                                                <h5><i class="fas fa-list-alt"></i> Listas</h5>
-                                                </a>
-                                            </li> --}}
-
-                                            <li class="list-item">
-                                                <a class="btn btn-link" id="perfil" href="#">
-                                                <h5><i class="fas fa-user-circle"></i>Perfil</h5>
-                                                </a>
-            								                </li>
-
-                                            {{-- <li class="list-item">
-                                              <a class="btn btn-link" href="#">
-                                              <h5><i class="fas fa-ellipsis-h"></i> Opciones</h5>
-                                              </a>
-                                            </li>
-                                          </ul> --}}
-{{--
-            								<button type="button" class="btn btn-primary btn-sm">Chamullar</button> --}}
-
+                              <li class="list-item">
+                                <a class="btn btn-link" id="perfil" href="#">
+                                <h5><i class="fas fa-user-circle"></i>Perfil</h5>
+                                </a>
+            					        </li>
 
                           </div>
 
@@ -105,109 +85,11 @@
                     </nav>
 
                     </div>
-
-
-                    {{-- <div class="tendencias  fondoGris">
-                                <h4>
-                                  Tendencias
-                                </h4>
-                    					<ul class="list-unstyled">
-                    						<li class="list-item border-bottom">
-                                  <a class="btn btn-link" href="#">
-                    							#Fernet
-                                </a>
-                    						</li>
-                    						<li class="list-item border-bottom">
-                                  <a class="btn btn-link" href="#">
-                    							#Asado
-                                  </a>
-                    						</li>
-                    						<li class="list-item border-bottom">
-                                  <a class="btn btn-link" href="#">
-                    							#Baile
-                                  </a>
-                    						</li>
-                    						<li class="list-item border-bottom">
-                                  <a class="btn btn-link" href="#">
-                    							#Juntada
-                                  </a>
-                    						</li>
-                    						<li class="list-item border-bottom">
-                                  <a class="btn btn-link" href="#">
-                    							#Europa
-                                  </a>
-                    						</li>
-                    						<li class="list-item border-bottom">
-                                  <a class="btn btn-link" href="#">
-                    							#EstadosUnidos
-                                  </a>
-                    						</li>
-                    						<li class="list-item border-bottom">
-                                  <a class="btn btn-link" href="#">
-                    							#Amigos
-                                  </a>
-                    						</li>
-
-                    					</ul> --}}
-                    					{{-- <h3>
-                    						Otros en tu zona:
-                    					</h3>
-                    					<ul class="list-unstyled">
-                                <a class="btn btn-link" href="#">
-                    						<li class="list-item">
-                    							LuquitasJ
-                                  </a>
-                    						</li>
-                    						<li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                    							Leolondero
-                                  </a>
-                    						</li>
-                    						<li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                    							Elnegromaxi
-                                  </a>
-                    						</li>
-                    						<li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                                  Elian
-                                  </a>
-                    						</li>
-                    						<li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                    							MartinFernan
-                                  </a>
-                    						</li>
-                    						<li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                    							MartinJagod
-                                  </a>
-                    						</li>
-                    						<li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                    							Charlychanta
-                                  </a>
-                    						</li>
-                    						<li class="list-item">
-                                  <a class="btn btn-link" href="#">
-                    							BarthSimp
-                                  </a>
-                    						</li>
-                    					</ul> --}}
-                    				</div>
-
-
-
-
-                    			</div>
-                    		</div>
-                    	</div>
-
-
-
+            				</div>
+              			</div>
+                		</div>
+                  	</div>
                     </div>
-
-
                     <!--  FIN DE  HOME -->
 
 

@@ -34,6 +34,6 @@ class HomeController extends Controller
            $amigo[]=user::find($id); }}
            if (empty($amigo)){$hayNoti=false;} else {$hayNoti=true;};
 
-        return view('home');
+        return view('home', compact('hayNoti'));
     }
 }

@@ -16,7 +16,10 @@
 
                                       </div>
                                       <div class="col-3 mb-3">
-                                         <button class="btn btn-primary form-control" type="button" @click="registrarPost()">Publicar</button>
+
+
+                                      <button class="btn btn-primary"  style="padding: 0px" type="button"> <img src="images/attach.png"  style="padding: 0px; height:30px"> </button>
+                                       <button class="btn btn-primary" type="button" style="display:block; float:right;" @click="registrarPost()">Publicar</button>
 
                                       </div>
 

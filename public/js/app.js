@@ -1894,6 +1894,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var _user = document.head.querySelector('meta[name="user"]');
 
 var nomusu = JSON.parse(_user.content);
@@ -37569,10 +37572,13 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-3 mb-3" }, [
+        _vm._m(0),
+        _vm._v(" "),
         _c(
           "button",
           {
-            staticClass: "btn btn-primary form-control",
+            staticClass: "btn btn-primary",
+            staticStyle: { display: "block", float: "right" },
             attrs: { type: "button" },
             on: {
               click: function($event) {
@@ -37637,7 +37643,27 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-primary",
+        staticStyle: { padding: "0px" },
+        attrs: { type: "button" }
+      },
+      [
+        _c("img", {
+          staticStyle: { padding: "0px", height: "30px" },
+          attrs: { src: "images/attach.png" }
+        })
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
