@@ -67,28 +67,24 @@ export default {
         }
     },
 
+ 
     methods : {
 
      
 
 
          actualizarUsuario(){
-                let me = this;
-                axios.put('/updateUser',  {
-                    'id'   : nomusu['id'],
-                    'name' : this.usuarios.vnombre,
-                    'surname'   : this.usuarios.vsurname,
-                    'phone'   : this.usuarios.vphone,
-                    'photo' : this.usuarios.vfoto
-                     
-                    
-                }, {
-                    headers : { 
-                    
-                    'Content-Type' : 'multipart/form-data'
-
-                        }
-                })
+               
+                var datos = new FormData();
+                datos.append('id',nomusu['id']);
+                
+                datos.append('name',this.usuarios.vnombre);
+                datos.append('surname', this.usuarios.vsurname);
+                datos.append('phone',this.usuarios.vphone);
+                datos.append('photo',this.usuarios.vfoto);
+                datos.append('_method','put');
+                // console.log(datos);
+                axios.post('/updateUser',datos )
                 .then(function (response) {
                     //  console.log(response.data);
                   
@@ -104,14 +100,15 @@ export default {
          
           obtenerImage(e){
 
-               this.usuarios.vfoto = this.$refs.file.files[0];
-               console.log(this.usuarios.vfoto);
+            //    this.usuarios.vfoto = this.$refs.file.files[0];
+            //    console.log(this.usuarios.vfoto);
 
                 let archivo = e.target.files[0];
-           
+                 this.usuarios.vfoto=archivo;
+              
             
             this.cargarImagen(archivo);
-
+               
           },
 
           cargarImagen(archivo){
@@ -130,15 +127,36 @@ export default {
         },
 
 
+        recuperarImagen(){
+            let me=this;
+              var url='/veravatar?id='+nomusu['id'];
+              axios.get(url)
+                .then(function (response) {
+                  console.log(response.data)
+                  me.mifoto=response.data;
+                  
+                })
+                .catch(function (error) {
+                    console.log('error al quere cargar');
+                });
+
+        },
+
+
          mostrarUsuario(){
                this.usuarios.vnombre=nomusu['name'];
                
                this.usuarios.vsurname=nomusu['surname'];
                this.usuarios.vphone=nomusu['phone'];
                this.usuarios.vfoto=nomusu['photo'];
-            //   console.log(nomusu['photo']);
+               console.log(this.usuarios.vfoto);
+                if (nomusu['photo']!=''){
+                    this.recuperarImagen();
+                 
+                }
+               
                    
-                //    this.usuarios.vfoto = nomusu['photo'];
+                //    this.mifoto = nomusu['photo'];
       }
 
 

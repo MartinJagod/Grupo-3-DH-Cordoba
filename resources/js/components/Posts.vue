@@ -5,29 +5,21 @@
 
 
 
-                <div class="col-7 mb-7">
+              <div class="col-7 mb-7">
+
+           <div class="row border-bottom mb-3">
+
+                  <div class="col-9 mb-3">
+                        <input class="form-control" type="text" placeholder="Que estas haciendo?" aria-label="Search" v-model="textpost" @keyup.enter="registrarPost()">
+
+                  </div>
+                  <div class="col-3 mb-3">
 
 
+                  <button class="btn btn-primary"  style="padding: 0px" type="button"> <img src="images/attach.png"  style="padding: 0px; height:30px"> </button>
+                   <button class="btn btn-primary" type="button" style="display:block; float:right;" @click="registrarPost()">Publicar</button>
 
-                                <div class="row border-bottom mb-3">
-
-                                      <div class="col-9 mb-3">
-                                            <input class="form-control" type="text" placeholder="Que estas haciendo?" aria-label="Search" v-model="textpost" @keyup.enter="registrarPost()">
-
-                                      </div>
-                                      <div class="col-3 mb-3">
-                                         <button class="btn btn-primary form-control" type="button" @click="registrarPost()">Publicar</button>
-
-                                      </div>
-
-
-
-
-
-
-                                </div>
-
-
+                  </div>
 
 
 
@@ -63,11 +55,11 @@
 
                                     </li>
                                 </ul>
-
+</div>
                     		  </div>
-
+</div>
                     </div>
-        </div>
+
                     <!-- se cierra canvas central -->
 </template>
 
@@ -81,7 +73,7 @@ export default {
         return {
             textpost : '',
             arrayPost : [],
-            nomuser : ''
+            nomuser : '',
         }
     },
     computed : {
@@ -117,7 +109,7 @@ export default {
                 let me=this;
                axios.post('/regPost', {
                     'posteo' : this.textpost,
-                    'id_user'   : nomusu['id']
+                    'id_user': nomusu['id']
 
                 })
                 .then(function (response) {

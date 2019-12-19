@@ -1761,18 +1761,15 @@ var nomusu = JSON.parse(user.content);
   },
   methods: {
     actualizarUsuario: function actualizarUsuario() {
-      var me = this;
-      axios.put('/updateUser', {
-        'id': nomusu['id'],
-        'name': this.usuarios.vnombre,
-        'surname': this.usuarios.vsurname,
-        'phone': this.usuarios.vphone,
-        'photo': this.usuarios.vfoto
-      }, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }).then(function (response) {//  console.log(response.data);
+      var datos = new FormData();
+      datos.append('id', nomusu['id']);
+      datos.append('name', this.usuarios.vnombre);
+      datos.append('surname', this.usuarios.vsurname);
+      datos.append('phone', this.usuarios.vphone);
+      datos.append('photo', this.usuarios.vfoto);
+      datos.append('_method', 'put'); // console.log(datos);
+
+      axios.post('/updateUser', datos).then(function (response) {//  console.log(response.data);
         // this.textpost='';
         //   me.mostrarPosts();
       })["catch"](function (error) {
@@ -1780,9 +1777,10 @@ var nomusu = JSON.parse(user.content);
       });
     },
     obtenerImage: function obtenerImage(e) {
-      this.usuarios.vfoto = this.$refs.file.files[0];
-      console.log(this.usuarios.vfoto);
+      //    this.usuarios.vfoto = this.$refs.file.files[0];
+      //    console.log(this.usuarios.vfoto);
       var archivo = e.target.files[0];
+      this.usuarios.vfoto = archivo;
       this.cargarImagen(archivo);
     },
     cargarImagen: function cargarImagen(archivo) {
@@ -1797,12 +1795,27 @@ var nomusu = JSON.parse(user.content);
 
       image.readAsDataURL(archivo);
     },
+    recuperarImagen: function recuperarImagen() {
+      var me = this;
+      var url = '/veravatar?id=' + nomusu['id'];
+      axios.get(url).then(function (response) {
+        console.log(response.data);
+        me.mifoto = response.data;
+      })["catch"](function (error) {
+        console.log('error al quere cargar');
+      });
+    },
     mostrarUsuario: function mostrarUsuario() {
       this.usuarios.vnombre = nomusu['name'];
       this.usuarios.vsurname = nomusu['surname'];
       this.usuarios.vphone = nomusu['phone'];
-      this.usuarios.vfoto = nomusu['photo']; //   console.log(nomusu['photo']);
-      //    this.usuarios.vfoto = nomusu['photo'];
+      this.usuarios.vfoto = nomusu['photo'];
+      console.log(this.usuarios.vfoto);
+
+      if (nomusu['photo'] != '') {
+        this.recuperarImagen();
+      } //    this.mifoto = nomusu['photo'];
+
     }
   },
   mounted: function mounted() {
@@ -1821,14 +1834,6 @@ var nomusu = JSON.parse(user.content);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -37569,10 +37574,13 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-3 mb-3" }, [
+        _vm._m(0),
+        _vm._v(" "),
         _c(
           "button",
           {
-            staticClass: "btn btn-primary form-control",
+            staticClass: "btn btn-primary",
+            staticStyle: { display: "block", float: "right" },
             attrs: { type: "button" },
             on: {
               click: function($event) {
@@ -37582,62 +37590,84 @@ var render = function() {
           },
           [_vm._v("Publicar")]
         )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "container border-bottom fondoGris" }, [
-      _c(
-        "div",
-        { staticClass: "container fondoDiv", attrs: { id: "centrali" } },
-        _vm._l(_vm.arrayPost, function(post) {
-          return _c("ul", { key: post.id, staticClass: "list-group" }, [
-            _c("li", { staticClass: "list-group mb-3" }, [
-              _c("div", { staticClass: "card" }, [
-                _c("img", {
-                  staticClass: "card-img-top",
-                  attrs: { src: "images/test1.jpg", alt: "..." }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("p", { domProps: { textContent: _vm._s(post.text_post) } })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-footer" }, [
-                  _c("small", {
-                    staticClass: "text-muted",
-                    domProps: { textContent: _vm._s(post.usuario) }
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "container border-bottom fondoGris" }, [
+        _c(
+          "div",
+          { staticClass: "container fondoDiv", attrs: { id: "centrali" } },
+          _vm._l(_vm.arrayPost, function(post) {
+            return _c("ul", { key: post.id, staticClass: "list-group" }, [
+              _c("li", { staticClass: "list-group mb-3" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    attrs: { src: "images/test1.jpg", alt: "..." }
                   }),
                   _vm._v(" "),
-                  _c("small", { staticClass: "text-muted" }, [
-                    _vm._v(
-                      "  -  Last updated 3 mins ago, a 345 personas le parece copado"
-                    )
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("p", {
+                      domProps: { textContent: _vm._s(post.text_post) }
+                    })
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary btn-sm",
-                      staticStyle: {
-                        display: "block",
-                        float: "right",
-                        "background-color": "#96C61B"
+                  _c("div", { staticClass: "card-footer" }, [
+                    _c("small", {
+                      staticClass: "text-muted",
+                      domProps: { textContent: _vm._s(post.usuario) }
+                    }),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "text-muted" }, [
+                      _vm._v(
+                        "  -  Last updated 3 mins ago, a 345 personas le parece copado"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary btn-sm",
+                        staticStyle: {
+                          display: "block",
+                          float: "right",
+                          "background-color": "#96C61B"
+                        },
+                        attrs: { type: "button" }
                       },
-                      attrs: { type: "button" }
-                    },
-                    [_vm._v("Bien ahi!!")]
-                  )
+                      [_vm._v("Bien ahi!!")]
+                    )
+                  ])
                 ])
               ])
             ])
-          ])
-        }),
-        0
-      )
+          }),
+          0
+        )
+      ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-primary",
+        staticStyle: { padding: "0px" },
+        attrs: { type: "button" }
+      },
+      [
+        _c("img", {
+          staticStyle: { padding: "0px", height: "30px" },
+          attrs: { src: "images/attach.png" }
+        })
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -50035,8 +50065,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\lucas\curso DH\coordobeses\Grupo-3-DH-Cordoba\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\lucas\curso DH\coordobeses\Grupo-3-DH-Cordoba\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\jagod\Desktop\DH\Grupo3\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\jagod\Desktop\DH\Grupo3\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
