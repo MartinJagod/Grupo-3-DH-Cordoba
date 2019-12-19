@@ -94,6 +94,8 @@
                     <nav class="navbar " >
                       <img class="img-fluid justify-content-sm-start" alt="Responsive image" src="/images/tglobo.png" style="display:block; margin-left: auto; margin-right: auto; width:90%; margin-bottom: 50px; margin-top: 20px;" />
                       {{-- navbar-light bg-white --}}
+                        <p style="text-align:center;">Estoy en {{Auth::user()->ubicacion}}</p>
+                        <br><br>
                       <form class="form-inline" type="get" action="{{route('friendship')}}" name="buscador">
                         <input class="form-control justify-content-sm-end" id="buscador" type="search" name="buscador" placeholder="Ej. La Mona" aria-label="Search" >
                         {{-- mr-sm-4 --}}
