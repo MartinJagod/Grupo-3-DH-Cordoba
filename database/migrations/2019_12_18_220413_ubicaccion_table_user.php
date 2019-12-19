@@ -14,7 +14,7 @@ class UbicaccionTableUser extends Migration
     public function up()
     {
       Schema::table('users', function (Blueprint $table) {
-$table->string('ubicacion');
+$table->string('ubicacion')->nullable();;
 });
 }
     /**
