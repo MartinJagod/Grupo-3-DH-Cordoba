@@ -7,19 +7,22 @@
 
               <div class="col-7 mb-7">
 
-           <div class="row border-bottom mb-3">
+                                <div class="row border-bottom mb-3">
 
-                  <div class="col-9 mb-3">
-                        <input class="form-control" type="text" placeholder="Que estas haciendo?" aria-label="Search" v-model="textpost" @keyup.enter="registrarPost()">
+                                      <div class="col-9 mb-3">
+                                            <input class="form-control" type="text" placeholder="Que estas haciendo?" aria-label="Search" v-model="textpost" @keyup.enter="registrarPost()">
 
-                  </div>
-                  <div class="col-3 mb-3">
+                                      </div>
+                                      <div class="col-3 mb-3">
 
 
-                  <button class="btn btn-primary"  style="padding: 0px" type="button"> <img src="images/attach.png"  style="padding: 0px; height:30px"> </button>
-                   <button class="btn btn-primary" type="button" style="display:block; float:right;" @click="registrarPost()">Publicar</button>
+                                      <button class="btn btn-primary"  style="padding: 0px" type="button"> <img src="images/attach.png" href="/notificacion" style="padding: 0px; height:30px"> </button>
+                                       <button class="btn btn-primary" type="button" style="display:block; float:right;" @click="registrarPost()">Publicar</button>
 
-                  </div>
+                                      </div>
+
+
+
 
 
 

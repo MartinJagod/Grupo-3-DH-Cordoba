@@ -1899,6 +1899,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var _user = document.head.querySelector('meta[name="user"]');
 
 var nomusu = JSON.parse(_user.content);
@@ -37662,7 +37665,7 @@ var staticRenderFns = [
       [
         _c("img", {
           staticStyle: { padding: "0px", height: "30px" },
-          attrs: { src: "images/attach.png" }
+          attrs: { src: "images/attach.png", href: "/notificacion" }
         })
       ]
     )
