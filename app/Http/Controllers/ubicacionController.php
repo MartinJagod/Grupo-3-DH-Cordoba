@@ -13,13 +13,12 @@ class ubicacionController extends Controller
     $usuario= Auth::user();
     $idUsuarioLog= $usuario['id'];
     $solicitar=user::find($idUsuarioLog);
-    if(empty($solicitar->ubicacion)){
   $archivo=file_get_contents("paises.json");
   $paisesArray=json_decode($archivo,true);
   return view ('ubicacion', compact('paisesArray'));}
-  else{ return view ('miLugarEnElMundo');}
 
-  }
+
+    // code...
 
 
 public function distanceCalculation(Request $rec) {
@@ -46,11 +45,19 @@ public function distanceCalculation(Request $rec) {
   $dondeEstas=$_POST['ubicacion'];
   $usuario= Auth::user();
   $idUsuarioLog= $usuario['id'];
-
   $solicitar=user::find($idUsuarioLog);
   $solicitar->ubicacion=$dondeEstas;
-  $solicitar->save();
 
-  return view ("ubicacionPlanisferio", compact('distance'));
+  $solicitar->save();
+  $solicitar->distancia=$distance;
+  $solicitar->latitud=$point1_lat;
+  $solicitar->longitud=$point1_long;
+  return view ("ubicacionPlanisferio", compact('solicitar'));
 }
+public function buscarPais(Request $rec){
+  $archivo=file_get_contents("paises.json");
+  $paisesArray=json_decode($archivo,true);
+  foreach ($paisesArray as $value) {
+    if ($value['name']==$rec['ubicacion'])
+    {var_dump ($value); exit;}}}
 }

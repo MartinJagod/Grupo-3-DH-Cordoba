@@ -32,4 +32,5 @@ Route::get('/notificacion','notificacioneController@notificacion')->name('notifi
 Route::get('/respuestasolicitud/{resp}/{id}','notificacioneController@respuestasolicitud')->name('respuestasolicitud');
 Route::get('/friendship', 'friendsController@find')->name('friendship');
 Route::get('/UbicacionMundial','ubicacionController@ubicar');
-Route::post('/UbicacionMundial','ubicacionController@distanceCalculation')->name('distanciaUbicacionMundial');
+Route::get('/buscarPais/{resp}','ubicacionController@buscarPais')->name('buscarPais');
+Route::post('/UbicacionMundial','ubicacionController@distanceCalculation')->name('UbicacionMundial');

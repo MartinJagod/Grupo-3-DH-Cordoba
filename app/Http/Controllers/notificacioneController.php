@@ -47,5 +47,6 @@ class notificacioneController extends Controller
           return redirect ('/notificacion');};
         }
 
+        
 
 }
