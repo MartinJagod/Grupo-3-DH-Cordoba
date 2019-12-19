@@ -1892,6 +1892,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var _user = document.head.querySelector('meta[name="user"]');
 
 var nomusu = JSON.parse(_user.content);
@@ -37527,7 +37529,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "col-7 mb-7" }, [
     _c("div", { staticClass: "row border-bottom mb-3" }, [
       _c("div", { staticClass: "col-9 mb-3" }, [
         _c("input", {
@@ -37590,20 +37592,41 @@ var render = function() {
         _vm._l(_vm.arrayPost, function(post) {
           return _c("ul", { key: post.id, staticClass: "list-group" }, [
             _c("li", { staticClass: "list-group mb-3" }, [
-              _c("div", { staticClass: "card border-secondary " }, [
-                _c("div", {
-                  staticClass: "card-header  text-white bg-secondary",
-                  domProps: { textContent: _vm._s(post.usuario) }
+              _c("div", { staticClass: "card" }, [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: { src: "images/test1.jpg", alt: "..." }
                 }),
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body" }, [
-                  _c("blockquote", { staticClass: "blockquote mb-0" }, [
-                    _c("p", {
-                      domProps: { textContent: _vm._s(post.text_post) }
-                    }),
-                    _vm._v(" "),
-                    _vm._m(0, true)
-                  ])
+                  _c("p", { domProps: { textContent: _vm._s(post.text_post) } })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-footer" }, [
+                  _c("small", {
+                    staticClass: "text-muted",
+                    domProps: { textContent: _vm._s(post.usuario) }
+                  }),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "text-muted" }, [
+                    _vm._v(
+                      "  -  Last updated 3 mins ago, a 345 personas le parece copado"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary btn-sm",
+                      staticStyle: {
+                        display: "block",
+                        float: "right",
+                        "background-color": "#96C61B"
+                      },
+                      attrs: { type: "button" }
+                    },
+                    [_vm._v("Bien ahi!!")]
+                  )
                 ])
               ])
             ])
@@ -37614,18 +37637,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "blockquote-footer" }, [
-      _c("a", { staticClass: "btn btn-primary btn-sm", attrs: { href: "#" } }, [
-        _vm._v("Me gusta")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -50023,8 +50035,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\Grupo-3-DH-Cordoba\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Grupo-3-DH-Cordoba\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\lucas\curso DH\coordobeses\Grupo-3-DH-Cordoba\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\lucas\curso DH\coordobeses\Grupo-3-DH-Cordoba\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -87,7 +87,7 @@
 
 
                     <!-- ESTO ES CANVAS DERECHO -->
-                    <div class="col-md-2 ">
+                    <div class="col-md-2">
 
                     <!-- buscador -->
                     {{-- <div class="justify-content-sm-end"> style="min-height: 80vh;" --}}
