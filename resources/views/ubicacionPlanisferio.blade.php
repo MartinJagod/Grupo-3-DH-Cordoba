@@ -1,20 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" >
-  <h1 style="text_aligne:center;">Estas en {{$solicitar->ubicacion}} a {{round($solicitar->distancia)}}Km de la plaza San Martin de Cordoba</h1>
+
+<div class="container">
+<div class="row">
+<div class="col-9">
+
+  <h4 style="text-align:center;">Upa!!! Estas en {{$solicitar->ubicacion}} a {{round($solicitar->distancia)}}Km de la plaza San Martin de Cordoba</h4>
+
+  </div>
+
+  <div class="col-3">
+
+  <a id="Notificaciones" href="/UbicacionMundial">
+  <button style="margin:10px;" type="btn" class="btn btn-success" name="button">Te moviste de lugar?</button>
+  </a>
+
+  </div>
+</div>
+
   <div   style="position:relative" width='500px'>
     <div class="">
      <img style="position:relative" src="images/planisferio.jpg" width='100%' alt="">
     <div  width='5px' height='5px' style="background-color:red; position:absolute;left:46.33%;top:71.11%;" > ACA </div></div>
   </div>
-  <ul>
-  <li class="list-item">
-      <a class="btn btn-link" id="Notificaciones" href="/UbicacionMundial">
-      <h5><i class="fas fa-user-circle"></i>Te moviste de lugar?</h5>
-      </a>
- </li>
-</ul>
+
 {{-- <p>{{href="buscarPais,{{Auth::user()->ubicacion}}"}}</p> --}}
 </div>
 @endsection

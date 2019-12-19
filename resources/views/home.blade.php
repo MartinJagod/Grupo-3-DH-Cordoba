@@ -31,11 +31,11 @@
 {{-- LISTADO CON OPCIONES MENU IZQUIERDO --}}
               							<ul class="list-unstyled">
 
-                              <li class="list-item">
+                              {{-- <li class="list-item">
                                   <a class="btn btn-link" id="perfil" href="#">
                                   <h5><i class="fas fa-user-circle"></i>fotos</h5>
                                   </a>
-                              </li>
+                              </li> --}}
 
                               <li class="list-item">
                                   <a class="btn btn-link" id="Notificaciones" href="/notificacion">

@@ -3,11 +3,11 @@
 @section('content')
 
   <div class="container">
+    <img class="img-fluid" alt="Responsive image" src="/images/cordoo.png" style="display:block; margin-left: auto; margin-right: auto; width:40%; margin-bottom: 50px; margin-top: 20px;" />
+
     <p>
-      <label for ='pais'>Donde estas: </label>
-      <br>
-      
-      <form class="" name="ubicacion" accion="/UbicacionMundial@distanceCalculation" method="post">
+          <h3 style="margin-top: 10%; text-align: center;">Por donde andai????</h3>
+            <form class=""  style="margin-top: 5%; text-align: center;" name="ubicacion" accion="/UbicacionMundial@distanceCalculation" method="post">
 {{ csrf_field() }}
       <select class="selectpicker"  name="ubicacion" title="Ubicacion en el mundo" >
         @foreach ($paisesArray as $value)
