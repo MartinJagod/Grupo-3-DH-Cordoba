@@ -6,7 +6,7 @@
 
 
                 <div class="col-7 mb-7">
-                    
+
 
 
                                 <div class="row border-bottom mb-3">
@@ -47,16 +47,18 @@
                                 <ul class="list-group" v-for="post in arrayPost" :key="post.id">
 
                                    <li class="list-group mb-3">
-                                            <div class="card border-secondary ">
-                                                    <div class="card-header  text-white bg-secondary"  v-text="post.usuario">
 
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <blockquote class="blockquote mb-0">
-                                                        <p v-text="post.text_post"></p>
-                                                        <footer class="blockquote-footer"> <a href="#" class="btn btn-primary btn-sm">Me gusta</a></footer>
-                                                        </blockquote>
-                                                    </div>
+                                   <div class="card">
+                                      <img src="images/test1.jpg" class="card-img-top" alt="...">
+                                      <div class="card-body">
+                                      <p v-text="post.text_post"></p>
+                                      </div>
+                                      <div class="card-footer">
+                                      <small class="text-muted" v-text="post.usuario"></small>
+                                      <small class="text-muted" >  -  Last updated 3 mins ago, a 345 personas le parece copado</small>
+                                      <button type="button" class="btn btn-primary btn-sm" style="display:block; float:right; background-color:#96C61B;">Bien ahi!!</button>
+                                      </div>
+
                                             </div>
 
                                     </li>
